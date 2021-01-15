@@ -8,12 +8,12 @@ namespace QuizGrader
         {
             TrueFalseQuestion tfq = new TrueFalseQuestion("Gus is still here", false);
 
-            tfq.AdministerQuestion();
+            //tfq.AdministerQuestion();
 
 
-            double score = tfq.GradeQuestion();
+            //double score = tfq.GradeQuestion();
 
-            Console.WriteLine(score);
+            //Console.WriteLine(score);
 
 
             MultipleChoiceQuestion mcq = new MultipleChoiceQuestion("What is the capital of Moldova?");
@@ -23,11 +23,18 @@ namespace QuizGrader
             mcq.AddPossibleAnswer("Paris", false);
             mcq.AddPossibleAnswer("Kiev", false);
 
-            mcq.AdministerQuestion();
+            //mcq.AdministerQuestion();
 
-            double score2 = mcq.GradeQuestion();
+            //double score2 = mcq.GradeQuestion();
 
-            Console.WriteLine(score2);
+            Quiz quiz = new Quiz("TestQuiz");
+            quiz.AddQuestion(tfq);
+            quiz.AddQuestion(mcq);
+
+            quiz.AdministerQuiz();
+            quiz.GradeQuiz();
+
+            Console.WriteLine(quiz.Grade);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace QuizGrader
 {
-    public abstract class Question
+    public abstract class Question: IQuestionable
     {
         public string Prompt { get; set; }
         public string Subject { get; set; }
